@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aqua;
+    min-height: 100vh;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template: 
+        "header" 10%
+        "banner1" 15%
+        "imageContainer"20%
+        "banner2" 15%
+        "image" 30%
+        "footer" 10%;
+        
+        .header{
+            grid-area: header;
+            background-color: brown
+        }
+         
+        .banner1{
+            grid-area: banner1;
+            background-color: bisque;
+        }
+
+        .imageContainer{
+            grid-area: imageContainer;
+            background-color: azure;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        
+        }
+
+        .banner2{
+            grid-area: banner2;
+            background-color: chartreuse;
+        }
+
+        .image{
+            grid-area: image;
+            background-color: darkgoldenrod;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer{
+            grid-area: footer;
+            background-color: darkslategrey;
+        }
+
+        .bannerCard{
+            width: 120px;
+            height: auto;
+        }
+
+        .bannerCard img{
+            height: 95px;
+        }
+
+        .imageCard{
+            width: 120px;
+            height: auto;
+        }
+
+        .imageCard img{
+            height: 80px;
+        }
+
+        @media(min-width: 600px){
+            grid-template:
+            "header header header header" 80px
+            "imageContainer imageContainer imageContainer banner1" 
+            "banner2 banner2 banner2 banner2" 140px
+            "image image image image"
+            "footer footer footer footer" 80px;
+
+            .imageContainer{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            
+            .bannerCard{
+                width: 150px;
+                height: auto;
+            }
+
+            .bannerCard img{
+                height: 100px;
+            }
+
+            .image{
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 36px;
+            }
+
+            .imageCard{
+                width: 200px;
+                height: auto;
+            }
+
+            .imageCard img{
+                height: 86px;
+            }
+        }
+        @media(min-width: 940px){
+            grid-template: 
+            "header header header header header"80px
+            "banner1 banner2 imageContainer imageContainer imageContainer" 440px
+            "image image image image image"
+            "footer footer footer footer footer"80px;
+
+            .bannerCard{
+                width: 160px;
+                height: auto;
+            }
+
+            .bannerCard img{
+                height: 200px;
+                width: auto;
+            }
+
+            .image{
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 19%;
+                
+            }
+
+            .imageCard img{
+                height: 70px;
+            }
+
+             }
+            
+        }
